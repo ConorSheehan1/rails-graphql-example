@@ -22,6 +22,8 @@ Style/MethodCallWithArgsParentheses:
   IgnoredMethods:
     - expect
     - gem
+    - include
+    - load
     - require
     - require_relative
     - raise
