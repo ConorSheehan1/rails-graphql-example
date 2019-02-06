@@ -1,5 +1,5 @@
 module Types
-  class DateTimeType < GraphQL::Schema::Scalar
+  class DateTimeType < Types::BaseScalar
     def self.coerce_input(value, _context)
       Time.zone.parse(value)
     end
