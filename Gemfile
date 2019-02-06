@@ -54,3 +54,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "rubocop", "~> 0.63.1"
+
+gem "graphql", "1.8.3"
+
+gem 'graphiql-rails', '1.5.0', group: :development
