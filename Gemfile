@@ -58,3 +58,5 @@ gem "rubocop", "~> 0.63.1"
 gem "graphql", "1.8.13"
 
 gem 'graphiql-rails', '1.5.0', group: :development
+
+gem 'bcrypt', '~> 3.1.7'
