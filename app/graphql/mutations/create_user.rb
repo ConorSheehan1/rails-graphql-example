@@ -14,8 +14,12 @@ module Mutations
     def resolve(name: nil, auth_provider: nil)
       User.create!(
         name: name,
-        email: auth_provider&.[](:email)&.[](:email),
-        password: auth_provider&.[](:email)&.[](:password)
+        # email: auth_provider&.[](:email)&.[](:email),
+        # password: auth_provider&.[](:email)&.[](:password)
+        # dig available in ruby >= 2.3.0
+        # http://mitrev.net/ruby/2015/11/13/the-operator-in-ruby/
+        email: auth_provider.dig(:email, :email),
+        password: auth_provider.dig(:email, :password)
       )
     end
   end
