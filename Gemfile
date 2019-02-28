@@ -60,3 +60,7 @@ gem "graphql", "1.8.13"
 gem 'graphiql-rails', '1.5.0', group: :development
 
 gem 'bcrypt', '~> 3.1.7'
+
+gem "search_object", "= 1.2.0"
+
+gem "search_object_graphql", "= 0.1"

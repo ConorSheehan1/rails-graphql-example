@@ -5,8 +5,28 @@ class Mutations::SignInUserTest < ActiveSupport::TestCase
     Mutations::SignInUser.new(object: nil, context: { }).resolve(args)
   end
 
+  def create_user
+    # Mutations::CreateUser.new(
+    #   object: {
+    #     name: 'Test User',
+    #     auth_provider: {
+    #       email: {
+    #         email: 'email@example.com',
+    #         password: '[omitted]'
+    #       }
+    #     }
+    #   },
+    #   context: {}
+    # )
+    User.create(name: 'test', email: 'test')
+  end
+
+
   test 'success' do
-    user = create :user
+    # undefined method create
+    # user = create :user
+    # user = User.create!
+    user = create_user
 
     result = perform(
       email: {
@@ -24,12 +44,12 @@ class Mutations::SignInUserTest < ActiveSupport::TestCase
   end
 
   test 'failure because wrong email' do
-    create :user
+    create_user
     assert_nil perform(email: { email: 'wrong' })
   end
 
   test 'failure because wrong password' do
-    user = create :user
+    user = create_user
     assert_nil perform(email: { email: user.email, password: 'wrong' })
   end
 end
