@@ -1,3 +1,7 @@
+### Credit
+Based on the [howtographql](https://www.howtographql.com/graphql-ruby/1-getting-started/) rails tutorial 
+
+
 ### Queries
 http://localhost:3000/graphiql
 
@@ -77,9 +81,22 @@ query getAllUserVotes {
     }
   }
 }
+
+mutation badLink {
+  createLink(url: "", description: "") {
+    id
+  }
+}
+
+query getLinkExamples {
+  allLinks(filter:{ descriptionContains:"example"}) {
+    description
+  }
+}
+
+query getSecondAndThirdLink {
+  allLinks(first:2, skip: 1) {
+    id
+  }
+}
 ```
-
-
-Based on the howtographql rails tutorial 
-
-https://www.howtographql.com/graphql-ruby/1-getting-started/
