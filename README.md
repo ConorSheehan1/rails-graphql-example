@@ -1,5 +1,10 @@
+[![Build Status](https://travis-ci.org/ConorSheehan1/rails-graphql-example.svg?branch=master)](https://travis-ci.org/ConorSheehan1/rails-graphql-example)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ### Credit
-Based on the [howtographql](https://www.howtographql.com/graphql-ruby/1-getting-started/) rails tutorial 
+Based on the [howtographql](https://www.howtographql.com/graphql-ruby/1-getting-started/) rails tutorial.  
+[howtographql source](https://github.com/howtographql/howtographql).  
+[graphql-ruby source](https://github.com/howtographql/graphql-ruby).  
 
 
 ### Queries

@@ -1,0 +1,13 @@
+os: linux
+dist: xenial
+rvm: 2.5.3
+
+language: ruby
+cache: bundler
+
+install:
+  - bundle install # install dependencies
+
+script:
+  - bundle exec rails test
+
