@@ -2,39 +2,18 @@ require 'test_helper'
 
 class Mutations::SignInUserTest < ActiveSupport::TestCase
   def perform(args = {})
-    Mutations::SignInUser.new(object: nil, context: { }).resolve(args)
+    context = { session: { token: 'test' } }
+    Mutations::SignInUser.new(object: nil, context: context).resolve(args)
   end
 
   def create_user
-    # Mutations::CreateUser.new(
-    #   object: {
-    #     name: 'Test User',
-    #     auth_provider: {
-    #       email: {
-    #         email: 'email@example.com',
-    #         password: '[omitted]'
-    #       }
-    #     }
-    #   },
-    #   context: {}
-    # )
-    User.create(name: 'test', email: 'test')
+    User.create(name: 'test', email: 'test', password: 'test')
   end
 
 
   test 'success' do
-    # undefined method create
-    # user = create :user
-    # user = User.create!
     user = create_user
-
-    result = perform(
-      email: {
-        email: user.email,
-        password: user.password
-      }
-    )
-
+    result = perform(email: { email: user.email, password: user.password })
     assert result[:token].present?
     assert_equal result[:user], user
   end
