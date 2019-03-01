@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mutations
   class CreateVote < BaseMutation
     argument :link_id, ID, required: false

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mutations
   class CreateUser < BaseMutation
     # often we will need input types for specific mutation

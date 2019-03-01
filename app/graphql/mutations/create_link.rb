@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mutations
   # `BaseMutation` was created from `rails generate graphql:install`
   class CreateLink < BaseMutation
