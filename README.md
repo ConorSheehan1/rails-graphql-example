@@ -1,6 +1,26 @@
 [![Build Status](https://travis-ci.org/ConorSheehan1/rails-graphql-example.svg?branch=master)](https://travis-ci.org/ConorSheehan1/rails-graphql-example)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+# Rails Graphql Example
+This is a small graphql example built on rails.
+Go to http://localhost:3000/graphiql and play around with the queries.
+
+### Install
+```bash
+# optionally set specific ruby version
+rbenv local 2.5.3 
+
+gem install bundler
+bundle install
+```
+
+### Start
+```bash
+bundle exec rails db:create
+bundle exec rails db:migrate
+bundle exec rails server
+```
+
 ### Credit
 Based on the [howtographql](https://www.howtographql.com/graphql-ruby/1-getting-started/) rails tutorial.  
 [howtographql source](https://github.com/howtographql/howtographql).  
